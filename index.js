@@ -14,7 +14,9 @@ require("./config/database").connect();
 
 // const user = require("./routes/user");
 
-
+app.get("/",(req,res)=>{
+  res.send("Welcome to my Page Follow the Readme file and use it");
+})
 app.use('/leaderboard', leaderboardRoutes);
 app.use('/user', userRoutes);
 app.use('/generate-data', generateDataRoutes);
