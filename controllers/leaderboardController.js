@@ -56,4 +56,19 @@ module.exports = {
     }
   },
   
+  getAllCountriesInLeaderboard: async (req, res) => {
+    try {
+      // Use distinct to get unique country values from the database
+      const countries = await LeaderboardEntry.distinct('Country');
+
+      if (countries.length === 0) {
+        return res.status(404).json({ message: 'No countries found in the leaderboard' });
+      }
+
+      res.json(countries);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  },
 };

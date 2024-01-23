@@ -16,6 +16,8 @@ This project provides a set of APIs for managing a leaderboard using a MongoDB d
 - **Method:** GET
 - **Parameters:**
   - `country`
+   to get the country name hit the endpoint: `/all-countries` with GET method
+
 - **Description:** Get the leaderboard for the last week for a specific country, displaying the top 200 entries.
 
 ### Fetch User Rank by UserID
